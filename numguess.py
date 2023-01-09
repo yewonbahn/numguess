@@ -5,5 +5,6 @@ print(answer)
 
 username = input("enter your name: ")
 print(f"Hi,{username}, Welcome to my game. Guess the number from 1 to 100.")
-guess = int(input("guess number"))
+guess = int(input("guess number: "))
 print(f"your number is {guess}")
+print(f"is it same number? {answer==guess}")
