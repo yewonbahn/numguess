@@ -5,10 +5,13 @@ print('Hello,',username)
 
 
 #Don't do
-animals = ['cat','dog']
+animals = ['cat','dog','dragon']
 
 #Do(Trailing comma)
-menus= [
+menus = [
     'Ramen',
     'Bear soup',
+    'Military soup'
     ]
+
+
