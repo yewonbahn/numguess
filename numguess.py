@@ -1,26 +1,35 @@
 from random import randint
 from time import sleep
 
-answer=randint(1,100)
-print(answer)
+def opening():
 
-username = input("enter your name: ")
-print(f"Hi,{username}, Welcome to my game. Guess the number from 1 to 100.")
-guess = int(input("guess number: "))
-print(f"your number is {guess}")
-print(f"is it same number? {answer==guess}")
+    answer=randint(1,100)
+    username = input("enter your name: ")
+    print(f"Hi,{username}, Welcome to my game. Guess the number from 1 to 100.")
+    return answer,username
 
+def game(guess,username):
+    #Compare answer with user's guess
+    if guess==answer:
+        print("*********************************")
+        sleep(1)
+        print("*********************************")
+        sleep(1)
+        print("*********************************")
+        sleep(1)
+        print(f"You got it right! The answer is {answer}.")
+        return 1
 
-#Compare answer with user's guess
-if guess==answer:
-    print("*********************************")
-    sleep(1)
-    print("*********************************")
-    sleep(1)
-    print("*********************************")
-    sleep(1)
-    print(f"You got it right! The answer is {answer}.")
-elif guess>answer:
-    print(f"Keep going,man ~ That was too high,{username}..")
-elif guess<answer:
-    print(f"Keep going,man ~ That was too low,{username}..")    
+    elif guess>answer:
+        print(f"Keep going,man ~ That was too high,{username}..")
+    elif guess<answer:
+        print(f"Keep going,man ~ That was too low,{username}..") 
+
+answer,username= opening()
+
+for i in range(1,10+1):
+    guess = int(input("guess number: "))
+    value=game(guess,username)
+    if value==1:
+        break
+
